@@ -11,7 +11,7 @@ The code is structured into folders.
 - agent_functions -> Contains all the functions that create agents.
 - performance_tests -> Contains the tests done to evaluate the functioning and training of the agents
 - DQN -> Contains trained agent files and results file
-- Images -> Conatins some of the figures extracted and used in the report.
+- Images -> Contains some of the figures extracted and used in the report.
 - test_minimax -> Contains the function to test the minimax implementation
 
 

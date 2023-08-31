@@ -1,5 +1,6 @@
 function [row] = getRow(board, column)
-%GET_ROW Summary of this function goes here
+%% By Mar Munuera - last updated 30/08/2023
+%GET_ROW 
 %   This function returs the row where the new piece can be placed.
 %   If no rows are available: -1
 

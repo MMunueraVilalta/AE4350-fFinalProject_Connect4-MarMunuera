@@ -1,4 +1,5 @@
 function [game_over] = game_is_over(board)
+%% By Mar Munuera - last updated 30/08/2023
 %GAME_IS_OVER Summary of this function goes here
 %   Return true is the game is over or return false if there are still
 %   moves to be made.

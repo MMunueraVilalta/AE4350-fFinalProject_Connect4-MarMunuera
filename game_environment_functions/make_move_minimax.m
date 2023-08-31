@@ -1,6 +1,6 @@
 function [new_board] = make_move_minimax(board,column, player_val)
-%MAKE_MOVE_MINIMAX Summary of this function goes here
-%   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+%MAKE_MOVE_MINIMAX  
 
     % Make a move on the board for the specified player
     new_board = board;

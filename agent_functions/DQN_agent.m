@@ -1,5 +1,8 @@
+%% By Mar Munuera - last updated 30/08/2023
+
 function [agent] = DQN_agent(obsInfo, actInfo, use_default_neural_network, standard_agent_options, options)
-% AC_AGENT 
+% AC_AGENT This function creates the DQN agent with the default definition
+% or specific as introduced in options.
 
     % Define the agent
     if use_default_neural_network

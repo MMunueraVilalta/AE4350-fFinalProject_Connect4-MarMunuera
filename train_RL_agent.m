@@ -1,4 +1,4 @@
-%% TRAIN REINFORCEMENT LEARNING AGENT TO PLAY A GAME
+%% TRAIN REINFORCEMENT LEARNING AGENT TO PLAY A GAME - by Mar Munera
 % This script creates and trains a given agent and saves it.
 
 clear all;

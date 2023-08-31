@@ -1,6 +1,8 @@
 function [adaptedMatrix ] = transform_matrix_features_env5(board)
-%TRANSFORM_MATRIX_FEATURES_ENV5 Summary of this function goes here
-%   Detailed explanation goes here
+%TRANSFORM_MATRIX_FEATURES_ENV5 convert 1 to 11 when 3 together are
+%detected and do the same for 9 to 99
+
+
     [rows, cols] = size(board);
     adaptedMatrix = board;
 

@@ -6,7 +6,9 @@ This project has been coded in MATLAB and requires the following: Reinforcement 
 
 The code is structured into folders.
 - Environment -> Contains all the environment matlab files to simulate the different environments presented in the report
+- Visualizer -> Contains the board game visualizer tool
 - game_environment_functions -> Contains all the functions that carry out sub-processes.
 - agent_functions -> Contains all the functions that create agents.
+- performance_tests -> Contains the tests done to evaluate the functioning and training of the agents
 - DQN -> Contains trained agent files and results file
 - Images -> Conatins some of the figures extracted and used in the report.

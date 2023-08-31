@@ -1,6 +1,6 @@
 function [bestMove, eval] = minimaxAlphaBeta(board, depth, alpha, beta, maximizingPlayer)
-%MINIMAX_MAR Summary of this function goes here
-%   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+%MINIMAX_MAR Implementation of the minimax algorithm
 
     copy_board=board;
     

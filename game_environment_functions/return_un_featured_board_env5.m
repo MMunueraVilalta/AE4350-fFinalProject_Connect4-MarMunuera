@@ -1,6 +1,7 @@
 function [transformedBoard] = return_un_featured_board_env5(inputBoard)
-%RETURN_UN_FEATURED_BOARD_ENV5 Summary of this function goes here
-%   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+%RETURN_UN_FEATURED_BOARD_ENV5 Tranform back the board
+
     transformedBoard = inputBoard;
     
     % Replace 11 with 1

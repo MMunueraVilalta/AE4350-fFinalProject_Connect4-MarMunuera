@@ -1,5 +1,6 @@
 % Function to check if a player has won
 function win = checkWin(board, val)
+%% By Mar Munuera - last updated 30/08/2023
 %CHECK_WIN Summary of this function goes here
 % if win = 1 --> Win
 % if win = 0 --> No win

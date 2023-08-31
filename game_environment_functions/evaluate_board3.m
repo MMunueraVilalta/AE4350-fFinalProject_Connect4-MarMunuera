@@ -1,6 +1,6 @@
 function [score] = evaluate_board3(board, player_or_computer)
-    %EVALUATE_BOARD Summary of this function goes here
-    %   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+    %EVALUATE_BOARD computes the score for the minimax algorithm
 
     score = 0;
     piece = player_or_computer;

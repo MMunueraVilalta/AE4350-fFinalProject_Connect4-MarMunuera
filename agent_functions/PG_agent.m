@@ -1,3 +1,4 @@
+%% By Mar Munuera - last updated 30/08/2023
 function [agent] = PG_agent(obsInfo, actInfo, use_default_neural_network, standard_agent_options, options)
 % PG_AGENT 
 

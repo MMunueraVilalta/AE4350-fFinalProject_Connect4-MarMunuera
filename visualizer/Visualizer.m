@@ -1,4 +1,5 @@
 classdef Visualizer < rl.env.viz.AbstractFigureVisualizer
+    %% By Mar Munuera
 % Visualize a reinforcement learning environment in a figure
     
     properties (Access = private)

@@ -1,7 +1,7 @@
 function [window_score] = evaluate_window(window,piece)
-%EVALUATE_WINDOW Summary of this function goes here
-%   Detailed explanation goes here
-
+%% By Mar Munuera - last updated 30/08/2023
+%EVALUATE_WINDOW of the board for the minimax algorithm and returns the
+%score
     score = 0;
 
     if piece ==1

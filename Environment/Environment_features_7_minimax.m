@@ -1,4 +1,5 @@
 classdef Environment_features_7_minimax < rl.env.MATLABEnvironment
+    %% By Mar Munuera - last updated 30/08/2023
     % ENVIRONMENT simulates a Connect4 game in MATLAB where the
     % reinforcement learning agent plays against the minimax algorithm player.
     

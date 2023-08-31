@@ -1,6 +1,7 @@
 function [availabilityVector ] = transform_matrix_features_env7(board)
-%TRANSFORM_MATRIX_FEATURES_ENV5 Summary of this function goes here
-%   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+%TRANSFORM_MATRIX_FEATURES_ENV7 Return 10 in feasible columns and -10 in
+%non feasible columns and +100 in advantageous moves
 
 [rows, cols] = size(board);
 availabilityVector = zeros(1, cols); % Initialize with zeros

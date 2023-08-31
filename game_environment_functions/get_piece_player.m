@@ -1,6 +1,6 @@
 function [move_col,move_row, col, row] = get_piece_player(x,board)
-%GET_PIECE_PLAYER Summary of this function goes here
-%   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+%GET_PIECE_PLAYER 
 
 if x<1
     col =1;

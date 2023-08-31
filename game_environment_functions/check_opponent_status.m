@@ -1,6 +1,7 @@
 function [blockingColumn] = check_opponent_status(board)
-%CHECK_OPPONENT_STATUS Summary of this function goes here
-%   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+%CHECK_OPPONENT_STATUS returns the column to block the opponent
+
 blockingColumn=0
 
 

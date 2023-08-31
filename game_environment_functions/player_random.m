@@ -1,6 +1,6 @@
 function [column,row] = player_random(Board)
-%PLAYER_RANDOM Summary of this function goes here
-%   Detailed explanation goes here
+%% By Mar Munuera - last updated 30/08/2023
+%PLAYER_RANDOM get play
 
 column= round(6*rand()+1);
 row = getRow(Board, column);

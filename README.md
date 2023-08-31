@@ -12,3 +12,6 @@ The code is structured into folders.
 - performance_tests -> Contains the tests done to evaluate the functioning and training of the agents
 - DQN -> Contains trained agent files and results file
 - Images -> Conatins some of the figures extracted and used in the report.
+
+
+It is important that in order to use the code, all the folders must be added to the main path manually.

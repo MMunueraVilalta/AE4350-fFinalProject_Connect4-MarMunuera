@@ -1,0 +1,107 @@
+%% TRAIN REINFORCEMENT LEARNING AGENT TO PLAY A GAME
+% This script creates and trains a given agent and saves it.
+
+clear all;
+close all;
+
+%% SET THE DESIRED AGENT AND OPTIONS
+
+% CHOOSE THE AGENT TO BE USED:
+% - "DQN": Deep Q-Network (DQN) Agent
+
+agent_to_use = "DQN";
+
+% CHOOSE TO USE A DEFAULT NEURAL NETWORK OR A DEFINED ONE: true or false
+use_default_neural_network = false;
+
+% CHOOSE THE NUMBER OF TRAINING EPISODES 
+number_of_games = 10000;
+
+% CHOOSE TO SET THE AGENT WITH STANDARD CONFIGURATION OR NOT 
+standard_agent_options= false;
+
+% CHOOSE THE NAME OF THE FILE IN WHICH THE AGENT TRAINED WILL BE SAVED:
+
+agent_filename = "DQN/savedAgents/Env7_myNet2_LearnRate0001_Entropy0.mat";
+params_filename= "DQN/savedParameters/Env4_myNet2_LearnRate0001_Entropy07.mat";
+
+% CHOOSE THE ENVIRONMENT TO TRAIN THE ALGORITHM IN:
+choose_env = "4";
+
+%% CREATE ENVIRONMENT AND I/O SPECIFICATIONS
+
+if choose_env == "1"
+    env     = Environment_1_minimax;
+elseif choose_env == "2"
+    env     = Environment_2_minimax;
+elseif choose_env == "3"
+    env     = Environment_3_minimax;
+elseif choose_env == "4"
+    env     = Environment_4_minimax;
+elseif choose_env == "5"
+    env     = Environment_features_5_minimax;
+elseif choose_env == "6"
+    env     = Environment_features_6_minimax;
+elseif choose_env == "7"
+    env     = Environment_features_7_minimax;
+else
+    disp("The use_player variable inputed is not defined.")
+end
+
+obsInfo = env.getObservationInfo;
+actInfo = env.getActionInfo;
+numObs  = obsInfo.Dimension(1);
+numAct  = numel(actInfo);
+
+%%
+
+if agent_to_use== "DQN"    
+    criticOpts= rlOptimizerOptions(LearnRate=0.001);
+    options = rlDQNAgentOptions(CriticOptimizerOptions=criticOpts, MiniBatchSize=64, ); %TargetUpdateFrequency=100, %  MiniBatchSize=256
+    options.EpsilonGreedyExploration.Epsilon = 0.7;
+
+    agent = DQN_agent(obsInfo, actInfo, use_default_neural_network, standard_agent_options, options);
+
+end
+
+
+%% Plot environment
+plot(env);
+
+%% Train agent
+
+maxsteps = 22;
+maxepisodes = number_of_games;
+
+trainingOptions = rlTrainingOptions(...
+    'MaxEpisodes', maxepisodes, ...
+    'MaxStepsPerEpisode', maxsteps, ...
+    'StopOnError', 'on', ...
+    'Verbose', false, ...
+    'Plots', 'training-progress', ...
+    'StopTrainingCriteria', 'AverageReward', ...
+    'StopTrainingValue', Inf, ...
+    'ScoreAveragingWindowLength', 10); 
+
+trainingOptions.UseParallel=true;
+trainingOptions.ParallelizationOptions.Mode="async";
+
+trainingStats = train(agent,env,trainingOptions);
+
+episode_index= trainingStats.EpisodeIndex;
+episode_reward= trainingStats.EpisodeReward;
+episode_steps= trainingStats.EpisodeSteps;
+average_reward= trainingStats.AverageReward;
+agent_steps= trainingStats.TotalAgentSteps;
+average_steps= trainingStats.AverageSteps;
+episode_Q0= trainingStats.EpisodeQ0;
+
+
+%% Save Agent and training parameters
+% Save the trained agent to a file
+save(agent_filename, 'agent');
+save(params_filename, 'episode_index', 'episode_reward', 'episode_steps', 'average_reward', 'agent_steps', 'average_steps', 'episode_Q0' )
+
+disp("Files saved.")
+
+

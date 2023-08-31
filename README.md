@@ -16,3 +16,14 @@ The code is structured into folders.
 
 
 It is important that in order to use the code, all the folders must be added to the main path manually.
+
+The main file is train_RL_agent, that allows to train a DQN, SARSA, PG, AC, PPO and TRPO agent. However, only the DQN agent has been properly analysed in this project.
+
+## Additional consideration for visualization
+Currently the training algorithm is implemented using parallel computing. When parallel computing is done, the visualizer dissapears and the "win", "loose" or "tie" messages have to be commented for it to work properly. This is the current configuration.
+If parallel computing is not wanted then comment the following lines: 
+
+""
+trainingOptions.UseParallel=true;
+trainingOptions.ParallelizationOptions.Mode="async";
+""
